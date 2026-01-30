@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adegan Global Security Robot - Olawale Abdul-Ganiyu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-section">
+                <div class="robot-icon">
+                    <i class="fas fa-robot"></i>
+               </div>
+                <div class="company-info">
+                    <h1 class="company-name">Adegan Global</h1>
+                    <p class="owner-name">Owner: Olawale Abdul-Ganiyu</p>
+                </div>
+            </div>
+            <div class="header-controls">
+                <button class="voice-btn" id="voiceToggle">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+                <button class="settings-btn" id="settingsToggle">
+                    <i class="fas fa-cog"></i>
+                </button>
+                <button class="emergency-btn" id="emergencyToggle">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Navigation Menu -->
+        <nav class="navigation">
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-items" id="menuItems">
+                <button class="menu-btn" data-section="dashboard">
+                    <i class="fas fa-home"></i> Dashboard
+                </button>
+                <button class="menu-btn" data-section="authentication">
+                    <i class="fas fa-shield-alt"></i> Authentication
+                </button>
+                <button class="menu-btn" data-section="authorization">
+                    <i class="fas fa-user-lock"></i> Authorization
+                </button>
+                <button class="menu-btn" data-section="network">
+                    <i class="fas fa-network-wired"></i> Network Security
+                </button>
+                <button class="menu-btn" data-section="maps">
+                    <i class="fas fa-map-marked-alt"></i> Location & Maps
+                </button>
+                <button class="menu-btn" data-section="devices">
+                    <i class="fas fa-mobile-alt"></i> Devices
+                </button>
+                <button class="menu-btn" data-section="encryption">
+                    <i class="fas fa-key"></i> Encryption
+                </button>
+                <button class="menu-btn" data-section="monitoring">
+                    <i class="fas fa-chart-line"></i> Monitoring
+                </button>
+                <button class="menu-btn" data-section="threats">
+                    <i class="fas fa-bug"></i> Threat Detection
+                </button>
+                <button class="menu-btn" data-section="satellites">
+                    <i class="fas fa-satellite"></i> Satellites
+                </button>
+                <button class="menu-btn" data-section="connectors">
+                    <i class="fas fa-plug"></i> Connectors
+                </button>
+                <button class="menu-btn" data-section="finance">
+                    <i class="fas fa-university"></i> Financial Security
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Digital Display Screen -->
+            <div class="digital-screen">
+                <div class="screen-header">
+                    <div class="screen-title">
+                        <i class="fas fa-desktop"></i>
+                        <span>Security Monitoring System</span>
+                    </div>
+                    <div class="screen-status">
+                        <span class="status-indicator active"></span>
+                        <span class="status-text">ACTIVE</span>
+                    </div>
+                </div>
+
+                <!-- Device Information Panel -->
+                <div class="device-info-panel">
+                    <div class="device-memory-display">
+                        <div class="memory-item">
+                            <span class="memory-label">RAM</span>
+                            <span class="memory-value" id="ramValue">8.0 GB</span>
+                            <div class="memory-bar">
+                                <div class="memory-fill" id="ramBar" style="width: 65%"></div>
+                            </div>
+                        </div>
+                        <div class="memory-item">
+                            <span class="memory-label">ROM</span>
+                            <span class="memory-value" id="romValue">256 GB</span>
+                            <div class="memory-bar">
+                                <div class="memory-fill" id="romBar" style="width: 45%"></div>
+                            </div>
+                        </div>
+                        <div class="memory-item">
+                            <span class="memory-label">STORAGE</span>
+                            <span class="memory-value" id="storageValue">512 GB</span>
+                            <div class="memory-bar">
+                                <div class="memory-fill" id="storageBar" style="width: 72%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="device-details">
+                        <div class="device-name">
+                            <i class="fas fa-laptop"></i>
+                            <span id="deviceName">Unknown Device</span>
+                        </div>
+                        <div class="device-type">
+                            <i class="fas fa-info-circle"></i>
+                            <span id="deviceType">Computer</span>
+                        </div>
+                        <div class="device-company">
+                            <i class="fas fa-building"></i>
+                            <span id="deviceCompany">Unknown Manufacturer</span>
+                        </div>
+                        <div class="device-code">
+                            <i class="fas fa-barcode"></i>
+                            <span id="deviceCode">Unknown Code</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location Input Panel -->
+                <div class="location-input-panel">
+                    <div class="input-group">
+                        <label for="locationInput">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Enter Location:
+                        </label>
+                        <div class="input-wrapper">
+                            <input type="text" id="locationInput" placeholder="Enter street name, city, or location code...">
+                            <button class="search-btn" id="searchLocation">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="targetDevice">
+                            <i class="fas fa-crosshairs"></i>
+                            Target Device/IP:
+                        </label>
+                        <div class="input-wrapper">
+                            <input type="text" id="targetDevice" placeholder="Enter IP address or device name...">
+                            <button class="track-btn" id="trackDevice">
+                                <i class="fas fa-bullseye"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Network Connection Panel -->
+                <div class="network-panel">
+                    <div class="network-header">
+                        <h3><i class="fas fa-wifi"></i> Network Connections</h3>
+                        <button class="refresh-btn" id="refreshNetwork">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                    </div>
+                    <div class="network-list" id="networkList">
+                        <div class="network-item">
+                            <div class="network-info">
+                                <span class="network-name">Connected Network</span>
+                                <span class="network-type">WiFi</span>
+                            </div>
+                            <div class="network-details">
+                                <span class="network-ip">192.168.1.100</span>
+                                <span class="network-status">Connected</span>
+                            </div>
+                        </div>
+                        <div class="network-item">
+                            <div class="network-info">
+                                <span class="network-name">Mobile Data</span>
+                                <span class="network-type">4G</span>
+                            </div>
+                            <div class="network-details">
+                                <span class="network-ip">192.168.100.50</span>
+                                <span class="network-status">Available</span>
+                            </div>
+                        </div>
+                        <div class="network-item">
+                            <div class="network-info">
+                                <span class="network-name">Bluetooth</span>
+                                <span class="network-type">BT</span>
+                            </div>
+                            <div class="network-details">
+                                <span class="network-ip">N/A</span>
+                                <span class="network-status">Active</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security Alerts Panel -->
+                <div class="alerts-panel">
+                    <div class="alerts-header">
+                        <h3><i class="fas fa-bell"></i> Security Alerts</h3>
+                        <span class="alert-count" id="alertCount">3</span>
+                    </div>
+                    <div class="alerts-list" id="alertsList">
+                        <div class="alert-item critical">
+                            <div class="alert-icon">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div class="alert-content">
+                                <div class="alert-title">Unauthorized Access Attempt</div>
+                                <div class="alert-details">IP: 192.168.1.155 - trying to access admin panel</div>
+                                <div class="alert-time">Just now</div>
+                            </div>
+                            <div class="alert-actions">
+                                <button class="block-btn">Block</button>
+                                <button class="allow-btn">Allow</button>
+                            </div>
+                        </div>
+                        <div class="alert-item warning">
+                            <div class="alert-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="alert-content">
+                                <div class="alert-title">Suspicious Login Attempt</div>
+                                <div class="alert-details">Multiple failed login attempts detected</div>
+                                <div class="alert-time">2 minutes ago</div>
+                            </div>
+                            <div class="alert-actions">
+                                <button class="block-btn">Block</button>
+                                <button class="allow-btn">Allow</button>
+                            </div>
+                        </div>
+                        <div class="alert-item info">
+                            <div class="alert-icon">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div class="alert-content">
+                                <div class="alert-title">Device Connection</div>
+                                <div class="alert-details">New device connected via WiFi</div>
+                                <div class="alert-time">5 minutes ago</div>
+                            </div>
+                            <div class="alert-actions">
+                                <button class="block-btn">Block</button>
+                                <button class="allow-btn">Allow</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Maps Display -->
+                <div class="maps-container">
+                    <div class="maps-header">
+                        <h3><i class="fas fa-map-marked-alt"></i> Location Tracking</h3>
+                        <div class="map-controls">
+                            <button class="map-btn active" data-map="google">Google Maps</button>
+                            <button class="map-btn" data-map="waze">Waze</button>
+                            <button class="map-btn" data-map="satellite">Satellite</button>
+                        </div>
+                    </div>
+                    <div class="map-display" id="mapDisplay">
+                        <div class="map-placeholder">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <p>Enter a location to view on map</p>
+                        </div>
+                    </div>
+                    <div class="location-details">
+                        <div class="location-item">
+                            <span class="location-label">Address:</span>
+                            <span class="location-value" id="addressValue">No location selected</span>
+                        </div>
+                        <div class="location-item">
+                            <span class="location-label">City:</span>
+                            <span class="location-value" id="cityValue">-</span>
+                        </div>
+                        <div class="location-item">
+                            <span class="location-label">Coordinates:</span>
+                            <span class="location-value" id="coordinatesValue">-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Voice Communication Panel -->
+                <div class="voice-panel">
+                    <div class="voice-header">
+                        <h3><i class="fas fa-phone"></i> Voice Communication</h3>
+                    </div>
+                    <div class="voice-controls">
+                        <button class="voice-control-btn" id="makeCall">
+                            <i class="fas fa-phone-alt"></i>
+                            Make Call
+                        </button>
+                        <button class="voice-control-btn" id="receiveCall">
+                            <i class="fas fa-phone-volume"></i>
+                            Receive Call
+                        </button>
+                        <button class="voice-control-btn" id="endCall">
+                            <i class="fas fa-phone-slash"></i>
+                            End Call
+                        </button>
+                    </div>
+                    <div class="call-status" id="callStatus">
+                        <span class="status-text">No active call</span>
+                    </div>
+                </div>
+
+                <!-- Touch Button Controls -->
+                <div class="touch-controls">
+                    <button class="touch-btn" id="scanNetwork">
+                        <i class="fas fa-search"></i>
+                        <span>Scan Network</span>
+                    </button>
+                    <button class="touch-btn" id="checkSecurity">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Check Security</span>
+                    </button>
+                    <button class="touch-btn" id="emergencyAlert">
+                        <i class="fas fa-bell"></i>
+                        <span>Emergency Alert</span>
+                    </button>
+                    <button class="touch-btn" id="systemReport">
+                        <i class="fas fa-file-alt"></i>
+                        <span>System Report</span>
+                    </button>
+                    <button class="touch-btn" id="locateDevice">
+                        <i class="fas fa-crosshairs"></i>
+                        <span>Locate Device</span>
+                    </button>
+                    <button class="touch-btn" id="blockAll">
+                        <i class="fas fa-ban"></i>
+                        <span>Block All</span>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal" id="alertModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-exclamation-triangle"></i> Security Alert</h3>
+                <button class="close-modal" id="closeAlertModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="alertModalBody">
+                <p class="alert-message">Security alert details will appear here</p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn danger">Block</button>
+                <button class="modal-btn warning">Monitor</button>
+                <button class="modal-btn success">Allow</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="voiceModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-microphone"></i> Voice Command</h3>
+                <button class="close-modal" id="closeVoiceModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="voice-indicator">
+                    <i class="fas fa-microphone-alt"></i>
+                </div>
+                <p class="voice-message">Listening...</p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn" id="stopVoice">Stop Listening</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
